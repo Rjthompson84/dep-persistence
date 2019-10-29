@@ -1,7 +1,7 @@
 package dep.persistence.transfer
 
-open class UserDto {
-    var firstName : String? = null
-    var lastName : String? = null
-    var email : String? = null
+class UserDto {
+    var firstName : String = ""
+    var lastName : String = ""
+    var email : String = ""
 }
