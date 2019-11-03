@@ -48,6 +48,12 @@
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-hibernate-orm</artifactId>
+      <exclusions>
+        <exclusion>
+          <artifactId>io.quarkus</artifactId>
+          <groupId>quarkus-hibernate-orm-panache</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>

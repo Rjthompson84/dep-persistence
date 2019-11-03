@@ -1,10 +1,10 @@
 package dep.persistence.repository
 
-import dep.persistence.entities.User
+import dep.persistence.entities.Event
 import org.springframework.data.jpa.repository.JpaRepository
 import javax.enterprise.context.ApplicationScoped
 
 @ApplicationScoped
-interface UserRepository : JpaRepository<User, Long> {
-    fun findByEmail(email: String) : User
+interface EventRepository : JpaRepository<Event, Long> {
+    fun findByOwnerId(ownerId: Long) : List<Event>
 }

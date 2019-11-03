@@ -1,7 +1,9 @@
 package dep.persistence.transfer
 
+import dep.persistence.annotations.ValidEmail
+
 class UserDto {
     var firstName : String = ""
     var lastName : String = ""
-    var email : String = ""
+    @ValidEmail var email : String = ""
 }
