@@ -15,4 +15,4 @@ compile:
 
 test:
   stage: test
-  script: "./mvnw install -B -V -Dsurefire.useFile=false -Xmx512m"
+  script: "./mvnw install -B -V -Dsurefire.useFile=false"
