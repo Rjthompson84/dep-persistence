@@ -88,6 +88,11 @@
       <artifactId>jandex-maven-plugin</artifactId>
       <version>1.0.6</version>
     </dependency>
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <scope>test</scope>
+    </dependency>
 
     <!-- Required to build native images -->
     <dependency>
