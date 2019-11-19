@@ -1,13 +1,13 @@
 image: java:8
 
 stages:
-  - build
+  - compile
   - test
 
 build:
-  stage: build
-  script: "./mvnw install -DskipTests -B"
+  stage: compile
+  script: "./mvnw install -DskipTests -B -V"
 
 test:
   stage: test
-  script: "./mvnw install"
+  script: "./mvnw install -B -V -Dsurefire.useFile=false"
