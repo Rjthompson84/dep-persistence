@@ -5,7 +5,9 @@ stages:
   - test
 
 build:
+  stage: build
   script: "./mvnw install -DskipTests -B"
 
 test:
+  stage: test
   script: "./mvnw install"
