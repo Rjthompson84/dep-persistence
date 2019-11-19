@@ -1,11 +1,9 @@
-image: maven:5.4.0
-
 stages:
   - build
   - test
 
 build:
-  script: "mvn install -DskipTests -B"
+  script: "./mvnw install -DskipTests -B"
 
 test:
-  script: "mvn install"
+  script: "./mvnw install"
