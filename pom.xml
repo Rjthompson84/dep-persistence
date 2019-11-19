@@ -132,7 +132,6 @@
           <systemProperties>
             <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
           </systemProperties>
-          <argLine>-Xmx512m</argLine>
         </configuration>
       </plugin>
       <plugin>

@@ -1,5 +1,8 @@
 image: java:8
 
+variables:
+  MAVEN_OPTS: "-Xms128m -Xmx1024m"
+
 stages:
   - resource_check
   - compile
@@ -15,4 +18,4 @@ compile:
 
 test:
   stage: test
-  script: "./mvnw install -B -V -Dsurefire.useFile=false"
+  script: "./mvnw test -B -V -Dsurefire.useFile=false"
