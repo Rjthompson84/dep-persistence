@@ -1,13 +1,18 @@
 image: java:8
 
 stages:
+  - resource_check
   - compile
   - test
 
-build:
+resource_check:
+  stage: resource_check
+  script: "java -XX:+PrintFlagsFinal -version | grep -iE 'HeapSize|PermSize|ThreadStackSize'"
+
+compile:
   stage: compile
   script: "./mvnw install -DskipTests -B -V"
 
 test:
   stage: test
-  script: "./mvnw install -B -V -Dsurefire.useFile=false"
+  script: "./mvnw install -B -V -Dsurefire.useFile=false -Xmx512m"
