@@ -34,6 +34,7 @@
     <dependency>
       <groupId>org.jetbrains.kotlin</groupId>
       <artifactId>kotlin-stdlib-jdk8</artifactId>
+      <version>${kotlin.version}</version>
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
@@ -131,6 +132,7 @@
           <systemProperties>
             <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
           </systemProperties>
+          <argLine>-Xmx512m</argLine>
         </configuration>
       </plugin>
       <plugin>
