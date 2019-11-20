@@ -19,7 +19,7 @@ compile:
 
 test:
   stage: test
-  script: "./mvnw install -B -V -Dsurefire.useFile=false"
+  script: "./mvnw test -B -V -Dsurefire.useFile=false"
 
 native:
   stage: native
