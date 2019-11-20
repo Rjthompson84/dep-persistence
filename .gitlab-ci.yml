@@ -1,12 +1,13 @@
-image: java:8
+image: oracle/graalvm-ce:latest
 
 variables:
-  MAVEN_OPTS: "-Xms128m -Xmx768m"
+  MAVEN_OPTS: "-Xms128m -Xmx512m"
 
 stages:
   - resource_check
   - compile
   - test
+  - native
 
 resource_check:
   stage: resource_check
@@ -19,3 +20,7 @@ compile:
 test:
   stage: test
   script: "./mvnw install -B -V -Dsurefire.useFile=false"
+
+native:
+  stage: native
+  script: "./mvnw package -Pnative"
