@@ -13,6 +13,4 @@ data class User(
         val email : String = "",
         var enabled : Boolean = false,
         @Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id : Long? = null
-) {
-
-}
+)

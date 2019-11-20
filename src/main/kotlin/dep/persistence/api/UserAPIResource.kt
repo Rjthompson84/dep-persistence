@@ -37,8 +37,8 @@ class UserAPIResource(@Autowired val userRepository: UserRepository) {
     @PUT
     @Operation(summary = "Update an existing user.")
     fun update(user: UserDto) : User {
-        val userById = userRepository.findByEmail(user.email)
-        val utilsUpdated = UserUtils.update(user, userById)
+        val userByEmail = userRepository.findByEmail(user.email)
+        val utilsUpdated = UserUtils.update(user, userByEmail)
         return userRepository.save(utilsUpdated)
     }
 

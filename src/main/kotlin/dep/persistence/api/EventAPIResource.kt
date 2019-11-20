@@ -17,7 +17,6 @@ import javax.ws.rs.core.MediaType
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 class EventAPIResource(@Autowired val eventRepository: EventRepository) {
-
     /**
      * Create an event object. Returns the created object in JSON format.
      */

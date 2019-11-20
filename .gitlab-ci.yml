@@ -1,7 +1,7 @@
 image: java:8
 
 variables:
-  MAVEN_OPTS: "-Xms128m -Xmx1024m"
+  MAVEN_OPTS: "-Xms128m -Xmx768m"
 
 stages:
   - resource_check
