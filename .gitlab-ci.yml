@@ -1,7 +1,11 @@
 image: oracle/graalvm-ce:latest
 
+cache:
+  paths:
+    - .m2/
+
 variables:
-  MAVEN_OPTS: "-Xms128m -Xmx512m"
+  MAVEN_OPTS: "-Xms128m -Xmx512m -Dmaven.repo.local=.m2"
 
 stages:
   - resource_check

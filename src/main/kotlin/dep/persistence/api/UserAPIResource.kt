@@ -5,7 +5,7 @@ import dep.persistence.repository.UserRepository
 import dep.persistence.transfer.UserDto
 import dep.persistence.utils.UserUtils
 import org.eclipse.microprofile.openapi.annotations.Operation
-import org.springframework.beans.factory.annotation.Autowired
+import javax.inject.Inject
 import javax.ws.rs.Consumes
 import javax.ws.rs.DELETE
 import javax.ws.rs.GET
@@ -19,7 +19,10 @@ import javax.ws.rs.core.MediaType
 @Path("/users")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-class UserAPIResource(@Autowired val userRepository: UserRepository) {
+class UserAPIResource {
+
+    @Inject
+    lateinit var userRepository: UserRepository
 
     @GET
     @Operation(summary = "List all users.", description = "Should only be used by administrative users.")
