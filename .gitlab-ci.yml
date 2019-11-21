@@ -21,6 +21,7 @@ test:
   stage: test
   script: "./mvnw test -B -V -Dsurefire.useFile=false -Dprofile=test"
 
-native:
-  stage: native
-  script: "./mvnw package -Pnative -Dquarkus.native.container-build=true"
+#Disabled for now, locally uses a lot of resources to generate a container-friendly native image.
+#native:
+#  stage: native
+#  script: "./mvnw package -Pnative -Dsurefire.useFile=false -DskipTests -Dquarkus.native.container-build=true"
