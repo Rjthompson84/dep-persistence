@@ -11,7 +11,7 @@ stages:
   - resource_check
   - compile
   - test
-  - native
+#  - native
 
 resource_check:
   stage: resource_check

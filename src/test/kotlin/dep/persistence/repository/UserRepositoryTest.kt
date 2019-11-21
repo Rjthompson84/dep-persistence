@@ -1,5 +1,6 @@
 package dep.persistence.repository
 
+import dep.persistence.DepIntegrationTest
 import dep.persistence.entities.User
 import io.quarkus.test.junit.QuarkusTest
 import org.junit.jupiter.api.Assertions.assertEquals
@@ -7,7 +8,7 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import javax.inject.Inject
 
-@QuarkusTest
+@DepIntegrationTest
 class UserRepositoryTest {
 
     @Inject
