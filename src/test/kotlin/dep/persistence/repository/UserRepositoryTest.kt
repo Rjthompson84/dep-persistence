@@ -1,14 +1,15 @@
 package dep.persistence.repository
 
-import dep.persistence.DepIntegrationTest
 import dep.persistence.entities.User
 import io.quarkus.test.junit.QuarkusTest
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.condition.DisabledIfSystemProperty
 import javax.inject.Inject
 
-@DepIntegrationTest
+@QuarkusTest
+@DisabledIfSystemProperty(named = "profile", matches = "test")
 class UserRepositoryTest {
 
     @Inject

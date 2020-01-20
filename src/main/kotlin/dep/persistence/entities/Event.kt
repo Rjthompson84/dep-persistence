@@ -1,6 +1,5 @@
 package dep.persistence.entities
 
-import com.google.common.collect.Lists
 import java.time.LocalDateTime
 import javax.persistence.Column
 import javax.persistence.Entity
@@ -14,7 +13,7 @@ import javax.persistence.OneToMany
 data class Event(@ManyToOne val owner: User? = null,
                  val title: String = "",
                  var venue: String = "",
-                 @OneToMany var guests: List<User> = Lists.newArrayList(),
+                 @OneToMany var guests: List<User> = ArrayList(),
                  @Column(name = "time_and_date") var timeAndDate: LocalDateTime? = null,
                  @Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id : Long? = null)
 {

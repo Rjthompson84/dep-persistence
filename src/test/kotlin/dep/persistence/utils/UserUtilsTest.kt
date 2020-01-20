@@ -6,8 +6,9 @@ import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
-internal class UserUtilsTest() {
-    lateinit var userDto: UserDto
+internal class UserUtilsTest {
+
+    var userDto: UserDto = UserDto()
 
     @BeforeEach
     fun setUp() {

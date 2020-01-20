@@ -1,9 +1,12 @@
 package dep.persistence
 
+import io.quarkus.test.junit.QuarkusTest
 import io.restassured.RestAssured.given
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.condition.DisabledIfSystemProperty
 
-@DepIntegrationTest
+@QuarkusTest
+@DisabledIfSystemProperty(named = "profile", matches = "test")
 class UserAPIResourceTest {
 
     @Test

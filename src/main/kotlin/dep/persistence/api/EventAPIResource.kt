@@ -4,7 +4,7 @@ import dep.persistence.entities.Event
 import dep.persistence.repository.EventRepository
 import dep.persistence.transfer.EventDto
 import org.eclipse.microprofile.openapi.annotations.Operation
-import org.springframework.beans.factory.annotation.Autowired
+import javax.inject.Inject
 import javax.ws.rs.Consumes
 import javax.ws.rs.GET
 import javax.ws.rs.POST
@@ -16,7 +16,10 @@ import javax.ws.rs.core.MediaType
 @Path("/events")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-class EventAPIResource(@Autowired val eventRepository: EventRepository) {
+class EventAPIResource {
+
+    @Inject
+    lateinit var eventRepository: EventRepository
     /**
      * Create an event object. Returns the created object in JSON format.
      */
