@@ -20,8 +20,9 @@ class EventAPIResource {
 
     @Inject
     lateinit var eventRepository: EventRepository
+
     /**
-     * Create an event object. Returns the created object in JSON format.
+     * List all events owned by the user identified by ownerId param.
      */
     @GET
     @Path("/{ownerId}/")
@@ -30,6 +31,9 @@ class EventAPIResource {
         return eventRepository.findByOwnerId(ownerId)
     }
 
+    /**
+     * Create an event object. Returns the created object in JSON format.
+     */
     @POST
     @Operation(summary = "Create an Event!")
     fun create(eventDto: EventDto) : Event {
