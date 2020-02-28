@@ -12,6 +12,7 @@ stages:
   - compile
   - test
   - integration
+  - package
 #  - native
 
 resource_check:
@@ -30,6 +31,10 @@ integration:
   stage: integration
   script: "./mvnw test -B -V -Dsurefire.useFile=false"
 
+package:
+  stage: package
+  script: "./mvnw package"
+  
 #Disabled for now, locally uses a lot of resources to generate a container-friendly native image.
 #native:
 #  stage: native

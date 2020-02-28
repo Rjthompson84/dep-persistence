@@ -8,9 +8,9 @@ import javax.persistence.Id
 
 @Entity
 data class User(
-        @Column(name = "first_name") val firstName : String = "",
-        @Column(name = "last_name") val lastName : String = "",
-        val email : String = "",
+        @Column(name = "first_name") var firstName : String = "",
+        @Column(name = "last_name") var lastName : String = "",
+        var email : String = "",
         var enabled : Boolean = false,
         @Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id : Long? = null
 )
