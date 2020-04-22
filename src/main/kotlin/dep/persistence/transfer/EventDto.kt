@@ -14,16 +14,16 @@ import java.time.LocalDateTime
  *
  * E.g. A user may not yet know the venue or date and time of the event at the time of event conception.
  */
-class EventDto {
+class EventDto(
     /** The title of the event. Provides context and purpose for the user. */
-    var title: String = ""
+    var title: String = "",
 
     /** The event organiser. */
-    var organiser: User? = null
+    var organiser: User? = null,
 
     /** The event venue. @TODO This should probably be an entity of it's own type. */
-    var venue: String = ""
+    var venue: String = "",
 
     /** The potential date and time for the event. */
     var dateAndTime: LocalDateTime? = null
-}
+)

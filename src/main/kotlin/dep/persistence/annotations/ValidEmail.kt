@@ -14,4 +14,5 @@ import kotlin.reflect.KClass
 annotation class ValidEmail(
         val message: String = "Invalid",
         val groups: Array<KClass<*>> = [],
-        val payload: Array<KClass<out Payload>> = [])
+        val payload: Array<KClass<out Payload>> = []
+)

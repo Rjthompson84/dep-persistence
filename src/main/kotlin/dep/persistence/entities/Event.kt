@@ -15,6 +15,5 @@ data class Event(@ManyToOne val owner: User? = null,
                  var venue: String = "",
                  @OneToMany var guests: List<User> = ArrayList(),
                  @Column(name = "time_and_date") var timeAndDate: LocalDateTime? = null,
-                 @Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id : Long? = null)
-{
-}
+                 @Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id : Long? = null
+)

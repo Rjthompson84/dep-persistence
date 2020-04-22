@@ -8,8 +8,8 @@ import dep.persistence.annotations.ValidEmail
  *
  * Allows for persistence-specific information to remain anonymous during transfer.
  */
-class UserDto {
-    var firstName : String = ""
-    var lastName : String = ""
+class UserDto(
+    var firstName : String = "",
+    var lastName : String = "",
     @ValidEmail var email : String = ""
-}
+)
