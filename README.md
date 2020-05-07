@@ -1,6 +1,6 @@
 # dep-persistence
 
-Digital Event Planner Persistence. An RESTful API driven persistence module for an event-centric application.
+Digital Event Planner Persistence. A RESTful API driven persistence module for an event-centric application.
 Ideally deployed as a 'microservice' to separate concerns, responsibilities and reduce coupling to other modules that would assume different roles within an application's architecture.
 
 # Starting dep-persistence locally
