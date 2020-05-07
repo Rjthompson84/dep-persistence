@@ -5,7 +5,7 @@ Ideally deployed as a 'microservice' to separate concerns, responsibilities and 
 
 # Starting dep-persistence locally
 
-Make sure there is a MySQL server running on the system and either match up details from the `application.properties` file or use an entirely unique properties file at build time with maven argument: `-Dproperties=/path/you/your/application.properties`.
+Make sure there is a MySQL server running on the system and either match up details from the `application.properties` file or use an entirely unique properties file at build time with maven argument: `-Dproperties=/path/to/your/application.properties`.
 
 Start the application locally in development mode with `mvn compile quarkus:dev` if you have maven 3.5.4+ installed or use the maven wrapper with `./mvnw compile quarkus:dev`.
 
