@@ -64,5 +64,5 @@ jobs:
           no_output_timeout: 30m
       - run:
           name: Verify (Native)
-          command: ./mvnw verify -Pnative
+          command: ./mvnw verify -Pnative -Dquarkus.native.container-build=true
           no_output_timeout: 30m
