@@ -11,7 +11,7 @@ jobs:
     working_directory: ~/repo
     environment:
       # Increase max heap size as building native image is a more resource instensive process.
-      MAVEN_OPTS: -Xmx6400m
+      MAVEN_OPTS: -Xmx7g
       # Set the GRAALVM_HOME env variable to the location where we will be installing GraalVM
       GRAALVM_HOME: /home/circleci/repo/.graalvm
     steps:
