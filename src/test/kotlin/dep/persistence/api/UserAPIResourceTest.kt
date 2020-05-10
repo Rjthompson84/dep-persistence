@@ -57,7 +57,7 @@ internal class UserAPIResourceTest {
     @Test
     fun testDelete()
     {
-        user = userRepo.save(User("dave", "bob", "email"))
+        user = userRepo.save(User("dave", "bob", "email-test"))
         given()
                 .`when`()
                 .header("Content-Type", "application/json")
