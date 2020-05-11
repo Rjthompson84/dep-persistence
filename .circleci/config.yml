@@ -11,7 +11,7 @@ jobs:
     working_directory: ~/repo
     environment:
       # Increase max heap size as building native image is a more resource instensive process.
-      MAVEN_OPTS: -Xmx7g
+      MAVEN_OPTS: -Xmx7300m
       # Set the GRAALVM_HOME env variable to the location where we will be installing GraalVM
       GRAALVM_HOME: /home/circleci/repo/.graalvm
     steps:
@@ -38,14 +38,11 @@ jobs:
             - ~/.m2
           key: v1-dependencies-{{ checksum "pom.xml" }}
 
-      # Standard maven build and test phases - does not perform a native build (or verify)
+      # Standard maven test phase
       # ########################
       - run:
-          name: Build (Standard)
-          command: ./mvnw clean package -DskipTests -Dmaven.test.skip=true
-      - run:
           name: Verify (Standard)
-          command: ./mvnw test
+          command: ./mvnw clean verify
 
       # Install GraalVM and native-image, needed for a native Quarkus build
       # ########################
@@ -56,13 +53,9 @@ jobs:
           name: Install native-image
           command: $GRAALVM_HOME/bin/gu install native-image
 
-      # Perform a native Quarkus build and verify
+      # Perform a native Quarkus verify
       # ########################
       - run:
-          name: Build (Native)
-          command: ./mvnw clean package -Pnative -DskipTests -Dmaven.test.skip=true -Dquarkus.native.container-build=true
-          no_output_timeout: 30m
-      - run:
           name: Verify (Native)
-          command: ./mvnw verify -Pnative -Dquarkus.native.container-build=true
+          command: ./mvnw clean verify -Pnative -Dquarkus.native.container-build=true
           no_output_timeout: 30m
